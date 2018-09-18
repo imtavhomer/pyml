@@ -1,3 +1,4 @@
+
 import os
 import pandas as pd
 import tarfile
@@ -19,3 +20,13 @@ def fetch_housing_data(housing_url=HOUSING_URL, housing_path=HOUSING_PATH):
 def load_housing_data(housing_path=HOUSING_PATH):
     csv_path = os.path.join(housing_path, "housing.csv")
     return pd.read_csv(csv_path)
+
+housing = load_housing_data()
+
+# data insights
+housing.head()
+housing.info()
+housing.describe()
+
+housing["ocean_proximity"].value_counts()
+
